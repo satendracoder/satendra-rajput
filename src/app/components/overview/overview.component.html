@@ -1,0 +1,154 @@
+<div class="pinned-header">
+  <h2>Pinned</h2>
+  <a href="#" class="customize-link">Customize your pins</a>
+</div>
+
+<div class="pinned-grid">
+  <div *ngFor="let repo of repositories" class="repo-card">
+    <div class="repo-content">
+      <div class="repo-header">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path
+            d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z">
+          </path>
+        </svg>
+        <a href="#" class="repo-title">{{ repo.title }}</a>
+        <button class="more-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+            </path>
+          </svg>
+        </button>
+      </div>
+      <span class="visibility-badge">{{ repo.visibility }}</span>
+      <p class="repo-description">{{ repo.description }}</p>
+      <div class="repo-meta">
+        <span class="meta-item">
+          <span class="color-dot" [style.background-color]="repo.color"></span>
+          {{ repo.platform }}
+        </span>
+        <span class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z">
+            </path>
+          </svg>
+          {{ repo.stars }}
+        </span>
+        <span class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z">
+            </path>
+          </svg>
+          {{ repo.forks }}
+        </span>
+      </div>
+    </div>
+    <div class="repo-image">
+      <img [src]="repo.image" alt="project preview">
+    </div>
+  </div>
+</div>
+
+ <!-- this Youtube  -->
+  <br><br>
+ <div class="profile-section">
+
+  <h3 class="section-title">YouTube</h3>
+
+  <div class="card-grid">
+    
+    <div class="profile-card">
+      <div class="card-left">
+        <a href="https://www.youtube.com/@satendracoder" target="_blank" class="link-btn">
+          <i class="fa-brands fa-youtube"></i>
+          <h4>Satendra Coder</h4>
+        </a>
+        <p>Learn to code with Satendra Coder tutorials in Hindi</p>
+    
+        <div class="meta">
+          <span>778K subscribers</span>
+          <span>645 videos</span>
+        </div>
+      </div>
+    
+      <img src="https://avatars.githubusercontent.com/u/114211179?v=4" class="profile-img">
+    </div>
+
+    <!-- <div class="profile-card">
+      <div class="card-left">
+        <h4>Serotask Saas</h4>
+        <p>Building with the new tech and frameworks</p>
+
+        <div class="meta">
+          <span>1.02M subscribers</span>
+          <span>1.7K videos</span>
+        </div>
+      </div>
+
+      <img src="profile2.jpg" class="profile-img">
+    </div> -->
+
+  </div>
+
+
+  <p class="sponsor">
+    Sponsors can reach at <span>satendracoder&#64;gmail.com</span>
+  </p>
+
+
+  <h3 class="section-title">Platforms</h3>
+
+  <div class="card-grid">
+
+    <div class="platform-card">
+      <div class="platform-left">
+        <h4>Satendra Coder</h4>
+        <p>Learn programming with interactive courses and challenges</p>
+
+        <div class="app-buttons">
+          <button>🌐 Website</button>
+         <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.05 
+                        10.05 0 0012 7.75c-1.6 0-3.1.37-4.43 1.03L5.7 5.8a.5.5 
+                        0 10-.87.5l1.84 3.18A8.03 8.03 0 004 15v3a2 2 0 002 
+                        2h1v-4h2v4h6v-4h2v4h1a2 2 0 002-2v-3c0-2.32-1.02-4.4-2.6-5.52zM9 
+                        13.25a.75.75 0 110-1.5.75.75 0 010 1.5zm6 
+                        0a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+            </svg>
+            <span>Android App</span>
+          </button>
+        </div>
+      </div>
+
+      <img src="https://www.satendracoder.com/icons/favicon.svg" class="platform-logo">
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-left">
+        <h4>Serotask</h4>
+        <p>Master new skills with expert-led courses and mentorship</p>
+
+        <div class="app-buttons">
+          <button>🌐 Website</button>
+          <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.05 
+                        10.05 0 0012 7.75c-1.6 0-3.1.37-4.43 1.03L5.7 5.8a.5.5 
+                        0 10-.87.5l1.84 3.18A8.03 8.03 0 004 15v3a2 2 0 002 
+                        2h1v-4h2v4h6v-4h2v4h1a2 2 0 002-2v-3c0-2.32-1.02-4.4-2.6-5.52zM9 
+                        13.25a.75.75 0 110-1.5.75.75 0 010 1.5zm6 
+                        0a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+            </svg>
+            <span>Android App</span>
+          </button>
+        </div>
+      </div>
+
+      <img src="https://serotask.vercel.app/assets/images/global/favicon.svg" class="platform-logo">
+    </div>
+
+  </div>
+
+</div>

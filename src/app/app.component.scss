@@ -1,0 +1,237 @@
+   .github-profile {
+     min-height: 100vh;
+     background-color: #0d1117;
+     // margin-top: 80px;
+   }
+
+   .header-width {
+     width: 100%;
+     margin: auto;
+     background-color: #161b22;
+     position: fixed;
+     top: 0;
+     z-index: 999;
+   }
+
+   .header {
+     width: 100%;
+     max-width: 1280px;
+     margin: auto;
+     padding: 0px;
+     background-color: #161b22;
+     border-bottom: 1px solid #21262d;
+     height: 65px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     @media (max-width: 768px) {
+       padding: 16px;
+     }
+   }
+
+   .header-left {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+   }
+
+   .menu-btn {
+     display: block;
+     color: #c9d1d9;
+     font-size: 26px;
+
+     @media (max-width: 768px) {
+       display: block;
+     }
+   }
+
+   .logo {
+     color: #c9d1d9;
+
+     @media (max-width: 768px) {
+       display: none;
+     }
+   }
+
+   .username {
+     color: #c9d1d9;
+     font-weight: 600;
+     font-size: 14px;
+   }
+
+   .header-center {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+   }
+
+   .search-box {
+     position: relative;
+   }
+
+   .search-box input {
+     background-color: #0d1117;
+     border: 1px solid #30363d;
+     border-radius: 6px;
+     padding: 10px 12px 10px 34px; // left space for icon
+     color: #c9d1d9;
+     font-size: 14px;
+     width: 350px;
+   }
+
+   .search-box input::placeholder {
+     color: #7d8590;
+   }
+
+   .search-box input:focus {
+     outline: none;
+     border-color: #58a6ff;
+   }
+
+   .search-icon {
+     position: absolute;
+     left: 12px;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 16px;
+     height: 16px;
+     fill: #8b949e; // important for visibility
+     pointer-events: none;
+   }
+
+   @media (max-width:768px) {
+     .search-box input {
+       width: 120px;
+     }
+   }
+
+   .header-right {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+
+     @media (max-width: 768px) {
+       gap: 8px;
+     }
+
+   }
+
+   .icon-btn {
+     color: #c9d1d9;
+     padding: 8px;
+     border-radius: 6px;
+     transition: background-color 0.2s;
+
+     &:hover {
+       background-color: #21262d;
+     }
+
+     @media (max-width: 768px) {
+       display: none;
+     }
+   }
+
+   .profile-pic-small {
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     background: url(https://avatars.githubusercontent.com/u/114211179?v=4) no-repeat center/cover;
+     border: 2px solid #21262d;
+   }
+
+   .nav {
+     background-color: #0d1117;
+     border-bottom: 1px solid #21262d;
+     overflow-x: auto;
+     position: sticky;
+     top: 65px;
+     z-index: 10;
+   }
+
+   .nav-container {
+     max-width: 1280px;
+     margin: 0 auto;
+     padding: 0px;
+     display: flex;
+     gap: 25px;
+
+     @media (max-width: 768px) {
+       padding: 0 16px;
+       gap: 8px;
+     }
+   }
+
+   .nav-item {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     padding: 16px 0;
+     color: #c9d1d9;
+     font-size: 14px;
+     white-space: nowrap;
+     border-bottom: 2px solid transparent;
+     transition: border-color 0.2s;
+     cursor: pointer;
+     text-decoration: none;
+
+     svg {
+       width: 16px;
+       height: 16px;
+     }
+
+     &.active {
+       border-bottom-color: #f78166;
+     }
+
+     &:hover:not(.active) {
+       border-bottom-color: #6e7681;
+     }
+
+     @media (max-width: 768px) {
+       font-size: 13px;
+       padding: 12px 0;
+       gap: 4px;
+     }
+   }
+
+   .badge {
+     background-color: #21262d;
+     color: #c9d1d9;
+     border-radius: 2em;
+     padding: 2px 6px;
+     font-size: 12px;
+     font-weight: 500;
+   }
+
+   .content {
+     max-width: 1280px;
+     margin: 0px auto;
+     padding: 20px 0px;
+     display: grid;
+     grid-template-columns: 300px 1fr;
+     gap: 35px;
+    margin-top: 65px;
+
+     @media (max-width: 1024px) {
+       grid-template-columns: 1fr;
+       padding: 24px 16px;
+     }
+   }
+
+   .sidebar {
+     @media (max-width: 1024px) {
+       display: flex;
+       gap: 24px;
+       align-items: flex-start;
+     }
+
+     @media (max-width: 768px) {
+       flex-direction: column;
+     }
+   }
+
+   .main-content {
+     min-width: 0;
+   }

@@ -1,0 +1,118 @@
+.profile-pic {
+  width: 296px;
+  height: 296px;
+  border-radius: 50%;
+  background: url(https://avatars.githubusercontent.com/u/114211179?v=4) no-repeat center/cover;
+  border: 1px solid #21262d;
+  margin-bottom: 16px;
+
+  @media (max-width: 1024px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @media (max-width: 768px) {
+    width: 296px;
+    height: 296px;
+  }
+}
+
+.profile-info {
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    flex: 1;
+  }
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 600;
+  color: #c9d1d9;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.username-text {
+  font-size: 20px;
+  color: #7d8590;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+
+.bio {
+  font-size: 14px;
+  color: #c9d1d9;
+  line-height: 1.5;
+}
+
+
+
+
+.profile-divider {
+  margin: 20px 0;
+  border-top: 1px solid #21262d;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #30363d;
+  border-radius: 50%;
+
+  color: #8b949e;
+  background: #0d1117;
+
+  transition: all 0.25s ease;
+}
+
+/* icon size */
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: #8b949e;
+  transition: all 0.25s ease;
+}
+
+/* hover effect */
+
+.social-link:hover {
+  border-color: #58a6ff;
+  background: #161b22;
+  transform: translateY(-2px);
+}
+
+.social-link:hover svg {
+  fill: #58a6ff;
+}
+
+/* mobile responsive */
+
+@media(max-width:768px) {
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+}
