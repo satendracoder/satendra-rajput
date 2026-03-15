@@ -110,7 +110,7 @@
    .header-right {
      display: flex;
      align-items: center;
-     gap: 16px;
+     gap: 25px;
 
      @media (max-width: 768px) {
        gap: 8px;
@@ -235,3 +235,11 @@
    .main-content {
      min-width: 0;
    }
+
+
+::ng-deep mat-menu-item, .mat-mdc-menu-item .mat-icon-no-color {
+   color: var(--white) !important;          // override card border radius
+}
+::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text{
+  color: var(--white) !important; 
+}

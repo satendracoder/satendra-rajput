@@ -4,8 +4,10 @@
       <div class="header-left">
         <button class="menu-btn">
           <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path>
-            </svg>
+            <path
+              d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z">
+            </path>
+          </svg>
         </button>
         <svg height="32" viewBox="0 0 16 16" width="32" class="logo">
           <path fill="currentColor"
@@ -26,24 +28,42 @@
         </div>
       </div>
       <div class="header-right">
+        <!-- <button class="icon-btn">
+          <mat-slide-toggle [(ngModel)]="checked">Toggle</mat-slide-toggle>
+        </button> -->
+
         <button class="icon-btn">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z">
-            </path>
-            <path
-              d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5z">
-            </path>
-          </svg>
+          <div matBadge="4" matBadgeOverlap="false" class="demo-section">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+              <path
+                d="M440-440h80v-200h-80v200Zm40 120q17 0 28.5-11.5T520-360q0-17-11.5-28.5T480-400q-17 0-28.5 11.5T440-360q0 17 11.5 28.5T480-320ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+            </svg>
+          </div>
         </button>
 
         <button class="icon-btn">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" [matMenuTriggerFor]="menu">
             <path
               d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
             </path>
           </svg>
         </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>arrow_downward</mat-icon>
+            <span>Resume Download</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>link</mat-icon>
+            <span>Personal Website</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>phone</mat-icon>
+            <span>+91 8859758708</span>
+          </button>
+        </mat-menu>
         <div class="profile-pic-small"></div>
+
       </div>
     </header>
   </div>
@@ -83,6 +103,30 @@
         </svg>
         Packages
       </a>
+
+      <a class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon">
+          <path
+            d="M6 2a2 2 0 0 0-2 2H2.5A1.5 1.5 0 0 0 1 5.5v7A1.5 1.5 0 0 0 2.5 14h11a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 13.5 4H12a2 2 0 0 0-2-2H6zm0 1h4a1 1 0 0 1 1 1H5a1 1 0 0 1 1-1z" />
+        </svg>
+        Experience
+      </a>
+
+      <a class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1c-3 0-5 1.5-5 3v1h10v-1c0-1.5-2-3-5-3z" />
+        </svg>
+        About
+      </a>
+
+      <a class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon">
+          <path
+            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-.5a.5.5 0 0 0-.5.5v.217l6.5 3.9 6.5-3.9V4a.5.5 0 0 0-.5-.5H2zm13 2.383-4.708 2.825L15 11.105V5.883zm-.034 6.434-5.317-3.19L8 9.583l-1.649-.456-5.317 3.19A.5.5 0 0 0 2 13h12a.5.5 0 0 0 .966-.683z" />
+        </svg>
+        Contact
+      </a>
+
       <a class="nav-item">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon">
           <path

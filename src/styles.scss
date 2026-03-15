@@ -54,6 +54,8 @@ $satendra-rajput-theme: mat.define-light-theme((
   --link-hover: #1f6feb;
   --accent-color: #238636;
   --transition: all 0.2s ease;
+  --white: #ffffff;
+  --black:#000000;
 }
 
 body {
@@ -83,3 +85,11 @@ button {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Angular Material overrides
+::ng-deep mat-menu-item, .mat-mdc-menu-item .mat-icon-no-color {
+   color: white !important;          // override card border radius
+}
+::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text{
+  color: white !important; 
+}
