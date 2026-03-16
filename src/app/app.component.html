@@ -49,15 +49,15 @@
           </svg>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
+          <button mat-menu-item (click)="downloadResume()">
             <mat-icon>arrow_downward</mat-icon>
             <span>Resume Download</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="openWebsite()">
             <mat-icon>link</mat-icon>
             <span>Personal Website</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="callPhone()">
             <mat-icon>phone</mat-icon>
             <span>+91 8859758708</span>
           </button>

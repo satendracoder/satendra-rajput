@@ -25,6 +25,7 @@ interface RepositoryModel {
 })
 export class OverviewComponent {
   editMode = false; // customize toggle
+  websiteUrl = 'https://satendracoder.com';
   repositories: RepositoryModel[] = [
     {
       title: 'ADCB Loan Origination System',
@@ -68,11 +69,22 @@ export class OverviewComponent {
     }
   ];
 
-  constructor() { 
-     const saved = localStorage.getItem('pinnedRepos');
+  deferredPrompt: any;
+
+  constructor() {
+    const saved = localStorage.getItem('pinnedRepos');
     if (saved) {
       this.repositories = JSON.parse(saved);
     }
+    // PWA install prompt sirf tab fire hota hai jab browser detect kare
+    window.addEventListener('beforeinstallprompt', (event: any) => {
+      // external websites ignore kar do
+      if (window.location.hostname === 'satendracoder.com') {
+        event.preventDefault();
+        this.deferredPrompt = event;
+        console.log('Portfolio PWA install ready');
+      }
+    });
   }
 
   ngOnInit() {
@@ -82,5 +94,28 @@ export class OverviewComponent {
     moveItemInArray(this.repositories, event.previousIndex, event.currentIndex);
 
     localStorage.setItem('pinnedRepos', JSON.stringify(this.repositories));
+  }
+
+  // Open personal website
+  openWebsite(type: string = 'personal') {
+    if (type === 'serotask') {
+      window.open('https://www.serotask.com/', '_blank');
+    } else {
+      window.open(this.websiteUrl, '_blank');
+    }
+  }
+
+  installPWA() {
+    debugger
+    if (!this.deferredPrompt) return;
+    this.deferredPrompt.prompt();
+    this.deferredPrompt.userChoice.then((choiceResult: any) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('Portfolio PWA installed');
+      } else {
+        console.log('Installation dismissed');
+      }
+      this.deferredPrompt = null;
+    });
   }
 }

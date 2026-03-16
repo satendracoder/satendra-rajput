@@ -23,7 +23,7 @@
           </svg>
         </button>
         <mat-menu #menu="matMenu" style="z-index: 9 !important;">
-          <button mat-menu-item>
+          <button mat-menu-item (click)="openWebsite()">
             <span>Website Link</span>
           </button>
           <button mat-menu-item>
@@ -119,8 +119,9 @@
         <p>Learn programming with interactive courses and challenges</p>
 
         <div class="app-buttons">
-          <button>🌐 Website</button>
-          <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
+          <button (click)="openWebsite('personal')">🌐 Website</button>
+          <button (click)="installPWA()" class="btn-app">
+             <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
               <path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.05 
                         10.05 0 0012 7.75c-1.6 0-3.1.37-4.43 1.03L5.7 5.8a.5.5 
                         0 10-.87.5l1.84 3.18A8.03 8.03 0 004 15v3a2 2 0 002 
@@ -142,7 +143,7 @@
         <p>Master new skills with expert-led courses and mentorship</p>
 
         <div class="app-buttons">
-          <button>🌐 Website</button>
+          <button (click)="openWebsite('serotask')">🌐 Website</button>
           <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
               <path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.05 
                         10.05 0 0012 7.75c-1.6 0-3.1.37-4.43 1.03L5.7 5.8a.5.5 
