@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/intro.js/minified/introjs.min.css",
               "src/styles.scss"
             ],
             "scripts": [],

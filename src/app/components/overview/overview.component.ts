@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { isPlatformBrowser } from '@angular/common';
 
 interface RepositoryModel {
   title: string;
@@ -26,6 +27,8 @@ interface RepositoryModel {
 export class OverviewComponent {
   editMode = false; // customize toggle
   websiteUrl = 'https://satendracoder.com';
+
+
   repositories: RepositoryModel[] = [
     {
       title: 'ADCB Loan Origination System',
@@ -71,20 +74,21 @@ export class OverviewComponent {
 
   deferredPrompt: any;
 
-  constructor() {
-    const saved = localStorage.getItem('pinnedRepos');
-    if (saved) {
-      this.repositories = JSON.parse(saved);
-    }
-    // PWA install prompt sirf tab fire hota hai jab browser detect kare
-    window.addEventListener('beforeinstallprompt', (event: any) => {
-      // external websites ignore kar do
-      if (window.location.hostname === 'satendracoder.com') {
-        event.preventDefault();
-        this.deferredPrompt = event;
-        console.log('Portfolio PWA install ready');
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      const saved = localStorage.getItem('pinnedRepos');
+      if (saved) {
+        this.repositories = JSON.parse(saved);
       }
-    });
+
+      window.addEventListener('beforeinstallprompt', (event: any) => {
+        if (window.location.hostname === 'satendracoder.com') {
+          event.preventDefault();
+          this.deferredPrompt = event;
+          console.log('Portfolio PWA install ready');
+        }
+      });
+    }
   }
 
   ngOnInit() {
@@ -93,7 +97,9 @@ export class OverviewComponent {
   drop(event: CdkDragDrop<RepositoryModel[]>) {
     moveItemInArray(this.repositories, event.previousIndex, event.currentIndex);
 
-    localStorage.setItem('pinnedRepos', JSON.stringify(this.repositories));
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('pinnedRepos', JSON.stringify(this.repositories));
+    }
   }
 
   // Open personal website

@@ -1,0 +1,95 @@
+.timeline {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 40px;
+}
+
+/* Vertical Line */
+.timeline::before {
+content: "";
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 2px;
+    height: calc(100% - 68%);
+    background: #2d2d2d;
+}
+
+/* Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Left part (dot alignment fix) */
+.timeline-left {
+  position: absolute;
+  left: -45px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dot (LinkedIn style small grey) */
+.dot {
+    width: 20px;
+    height: 20px;
+    background: #6e7681;
+    border-radius: 50%;
+    margin-top: 0px;
+}
+
+/* Content */
+.timeline-content {
+  display: flex;
+  gap: 16px;
+}
+
+/* Logo */
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Text */
+.timeline-content h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--white);
+}
+
+/* Divider (Break like LinkedIn) */
+.role-divider {
+  height: 1.5px;
+  background: var(--border-color);
+  margin: 10px 0;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* Role Title */
+.role-title {
+  font-weight: 600;
+  color: var(--link-hover);
+  margin: 0;
+}
+
+.meta,
+.location {
+  font-size: 13px;
+  color: var(--text-muted);
+margin: 5px auto;
+
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 5px;
+  line-height: 1.5;
+}
