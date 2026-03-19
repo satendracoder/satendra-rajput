@@ -1,0 +1,41 @@
+<div class="skills-section">
+
+  <h2 class="section-title">Tech Stack</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card" *ngFor="let skill of skills">
+
+      <div class="card-inner">
+
+        <!-- Front -->
+        <div class="card-front">
+          <h3>{{skill.category}}</h3>
+
+          <p>
+            {{skill.items.length}} Technologies
+          </p>
+
+          <button class="btn primary">
+            Explore
+          </button>
+        </div>
+
+        <!-- Back -->
+        <div class="card-back">
+          <h3>{{skill.category}}</h3>
+
+          <div class="skills-list">
+            <span *ngFor="let item of skill.items">
+              {{item}}
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

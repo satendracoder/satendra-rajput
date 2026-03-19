@@ -1,0 +1,198 @@
+/* Card */
+.project-card {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+.project-grid {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card */
+.project-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect 🔥 */
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--link-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.project-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--white);
+}
+
+/* Client */
+.client {
+  font-size: 13px;
+  color: var(--link-hover);
+  margin: 6px 0;
+}
+
+/* Description */
+.desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Tags */
+.tags {
+  margin: 10px 0;
+}
+
+.tags span {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 20px;
+  background: var(--bg-tertiary);
+  color: var(--link-color);
+}
+
+/* Button */
+ .btn {
+  width: max-content;
+  margin: 10px auto;
+  background-color: var(--link-color);
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: var(--white);
+  &:hover{
+    background-color: var(--link-hover);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Modal Wrapper */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+/* Overlay */
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* Modal Box */
+.modal-content {
+  position: relative;
+  width: 700px;
+  max-width: 95%;
+  margin: 10% auto;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  z-index: 10;
+  animation: modalFade 0.3s ease;
+}
+
+/* Animation */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.close-btn:hover {
+  color: var(--white);
+}
+
+/* Title */
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+/* Info text */
+.modal-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 5px 0;
+}
+
+/* Tech stack */
+.tech-stack {
+  margin: 10px 0;
+}
+
+.tech-stack span {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: var(--bg-tertiary);
+  color: var(--link-color);
+}
+
+/* Features list */
+.modal-content ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.modal-content li {
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+/* Highlight text */
+.highlight {
+  color: var(--link-color);
+  font-weight: 500;
+}

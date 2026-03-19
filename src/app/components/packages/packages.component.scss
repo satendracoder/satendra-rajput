@@ -1,0 +1,69 @@
+.package-section {
+  margin-top: 60px;
+}
+
+/* Item */
+.package-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.package-item:hover {
+  background: var(--bg-secondary);
+}
+
+/* Left */
+.package-left h3 {
+  margin: 0;
+  color: var(--link-color);
+  font-size: 16px;
+}
+
+.package-left p {
+  margin: 6px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Actions */
+.package-actions {
+  margin-top: 8px;
+}
+
+.link {
+  margin-right: 12px;
+  font-size: 13px;
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: var(--bg-secondary);
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Right badge */
+.package-right {
+  display: flex;
+  align-items: start;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* NPM highlight */
+.badge.npm {
+  background: #c62828;
+  color: white;
+}

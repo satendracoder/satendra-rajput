@@ -1,0 +1,88 @@
+<div class="projects-section">
+  <br>  <br>
+  <h2 class="section-title">Projects</h2>
+    <br>
+ <div class="project-grid">
+
+  <div 
+    class="project-card" 
+    *ngFor="let project of projects"
+  >
+
+    <h3>{{project.name}}</h3>
+
+    <p class="client">
+      Client: <strong>{{project.client}}</strong>
+    </p>
+
+    <p class="desc">
+      {{project.shortDesc}}
+    </p>
+
+    <!-- Tech -->
+    <div class="tags">
+      <span *ngFor="let tech of project.tech">
+        {{tech}}
+      </span>
+    </div>
+
+    <!-- Button -->
+    <button class="btn primary" (click)="openProject(project)">
+      View Details
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="project-modal" *ngIf="selectedProject">
+
+  <div class="modal-overlay" (click)="closeProject()"></div>
+
+  <div class="modal-content">
+
+    <span class="close-btn" (click)="closeProject()">✖</span>
+
+    <h2>{{selectedProject.name}}</h2>
+
+    <p><strong>Client:</strong> {{selectedProject.client}}</p>
+    <p><strong>Company:</strong> {{selectedProject.company}}</p>
+
+    <!-- Tech -->
+    <div class="tech-stack">
+      <span *ngFor="let tech of selectedProject.tech">
+        {{tech}}
+      </span>
+    </div>
+
+    <!-- Full Desc -->
+    <p class="desc">
+      {{selectedProject.fullDesc}}
+    </p>
+
+    <!-- Features -->
+    <ul>
+      <li *ngFor="let f of selectedProject.features">
+        {{f}}
+      </li>
+    </ul>
+
+  </div>
+
+</div>
