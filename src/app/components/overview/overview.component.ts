@@ -61,9 +61,9 @@ export class OverviewComponent {
       color: '#dd0031'
     },
     {
-      title: 'Redmil PPF (Paint Protection Film)',
+      title: 'HDFC Loan CRM',
       visibility: 'Private',
-      description: 'Developed a dynamic Angular website for paint protection film services including car listings, product management, blogs, and admin dashboard.',
+      description: 'Built an Angular-based CRM for customer on-boarding, loan application workflows, and approval process with secure API integration.',
       platform: 'Angular, Angular Material, REST APIs, JWT, RxJS, GitHub, Postman',
       stars: 150,
       forks: 40,

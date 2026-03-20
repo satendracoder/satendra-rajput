@@ -147,6 +147,20 @@
 
     <section class="main-content">
       <router-outlet />
+       <app-onboarding></app-onboarding>
     </section>
   </main>
+</div>
+
+
+<div class="open-source-banner" *ngIf="showBanner">
+
+  <p>
+    💡 This portfolio is continuously evolving.  
+    You can also use it as a template from 
+    <a href="https://github.com/satendracoder" target="_blank">GitHub</a>.
+  </p>
+
+  <span class="close-btn" (click)="closeBanner()">✖</span>
+
 </div>

@@ -243,3 +243,67 @@
 ::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text{
   color: var(--white) !important; 
 }
+
+
+
+// banner_Po
+.open-source-banner {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  padding: 12px 16px;
+  width: 90%;
+  max-width: 600px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Text */
+.open-source-banner p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Link */
+.open-source-banner a {
+  color: var(--link-color);
+}
+
+/* Close */
+.close-btn {
+  cursor: pointer;
+  margin-left: 10px;
+  color: var(--text-muted);
+}
+
+.close-btn:hover {
+  color: var(--white);
+}
+.open-source-banner {
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+

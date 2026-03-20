@@ -1,0 +1,41 @@
+<div class="onboarding" *ngIf="showPopup">
+
+  <div class="popup">
+
+    <!-- STEP 1 -->
+    <div *ngIf="step === 'ask'" class="step">
+      <h3>👋 Welcome!</h3>
+      <p>Are you a recruiter?</p>
+
+      <div class="actions">
+        <button (click)="selectUser('recruiter')">Yes</button>
+        <button (click)="selectUser('other')">No</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Welcome -->
+    <div *ngIf="step === 'welcome'" class="step">
+      <h3>🎉 Welcome to my portfolio</h3>
+
+      <ng-lottie
+        [options]="{
+          path: 'assets/lottie/welcome.json'
+        }">
+      </ng-lottie>
+    </div>
+
+    <!-- STEP 3: Recruiter Intro -->
+    <div *ngIf="step === 'intro'" class="step">
+      <h3>🚀 Quick Intro</h3>
+      <p>Angular-focused Full Stack Developer with FinTech experience.</p>
+
+      <ng-lottie
+        [options]="{
+          path: 'assets/json/success.json'
+        }">
+      </ng-lottie>
+    </div>
+
+  </div>
+
+</div>

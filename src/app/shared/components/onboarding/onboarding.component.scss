@@ -1,0 +1,84 @@
+.onboarding {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+/* Popup */
+.popup {
+  width: 320px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+
+  border: 1px solid var(--border-color);
+
+  animation: slideUp 0.5s ease;
+}
+
+/* Animation from bottom 🔥 */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Buttons */
+.actions {
+  margin-top: 15px;
+}
+
+.actions button {
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--link-color);
+  color: white;
+}
+
+
+
+
+
+
+
+
+// intor 
+/* Tooltip box */
+.introjs-tooltip {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Title */
+.introjs-tooltip-title {
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Buttons */
+.introjs-button {
+  background: var(--link-color) !important;
+  border-radius: 6px !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* Highlight */
+.introjs-helperLayer {
+  border-radius: 12px !important;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.6);
+}
