@@ -1,6 +1,7 @@
 .onboarding {
   position: fixed;
   bottom: 20px;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -53,32 +54,48 @@
 
 
 
-// intor 
 /* Tooltip box */
-.introjs-tooltip {
-  background: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
+:host .introjs-tooltip {
+  background: #161b22 !important;
+  color: #c9d1d9 !important;
   border-radius: 12px !important;
-  border: 1px solid var(--border-color) !important;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border: 1px solid #30363d !important;
+  padding: 15px !important;
+  max-width: 260px;
+}
+
+.introjs-tooltip {
+    box-sizing: content-box !important;
+    position: absolute !important;
+    visibility: visible !important;
+    background-color: #1c1e22 !important;
+    border-radius: 5px !important;
+    box-shadow: 0 3px 30px rgba(33, 33, 33, .3);
+    transition: opacity .1s ease-out !important;
 }
 
 /* Title */
 .introjs-tooltip-title {
+  color: #fff !important;
   font-weight: 600;
-  color: var(--white);
+  margin-bottom: 5px;
 }
 
 /* Buttons */
 .introjs-button {
-  background: var(--link-color) !important;
-  border-radius: 6px !important;
+  background: #58a6ff !important;
   color: white !important;
+  border-radius: 6px !important;
   border: none !important;
 }
 
 /* Highlight */
 .introjs-helperLayer {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   box-shadow: 0 0 0 9999px rgba(0,0,0,0.6);
+}
+
+/* Arrow */
+.introjs-arrow {
+  border-bottom-color: #161b22 !important;
 }

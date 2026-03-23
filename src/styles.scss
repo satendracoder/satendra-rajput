@@ -95,3 +95,53 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text{
   color: white !important; 
 }
+
+
+
+/* FORCE OVERRIDE Intro.js */
+html body .introjs-tooltip {
+  background: #161b22 !important;
+  color: #c9d1d9 !important;
+
+  border-radius: 12px !important;
+  border: 1px solid #30363d !important;
+
+  padding: 16px !important;
+  max-width: 280px !important;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7) !important;
+}
+
+/* Title fix */
+html body .introjs-tooltip-title {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+/* Text */
+html body .introjs-tooltiptext {
+  color: #8b949e !important;
+  font-size: 13px !important;
+}
+
+/* Buttons */
+html body .introjs-button {
+  background: #58a6ff !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  border: none !important;
+}
+
+/* Overlay */
+html body .introjs-overlay {
+  background: rgba(0,0,0,0.7) !important;
+}
+
+/* Highlight */
+html body .introjs-helperLayer {
+  border-radius: 10px !important;
+  box-shadow: 
+    0 0 0 2px #58a6ff,
+    0 0 0 9999px rgba(0,0,0,0.7) !important;
+}

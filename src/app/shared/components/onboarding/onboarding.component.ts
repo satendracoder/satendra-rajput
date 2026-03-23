@@ -37,52 +37,83 @@ export class OnboardingComponent {
     setTimeout(() => {
       this.close();
     }, 4000);
+
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('onboarding_seen', 'onboarding_seen');
+      this.showPopup = false;
+    }
   }
 
   close() {
     this.showPopup = false;
   }
+async startTour() {
 
-  async startTour() {
+  if (isPlatformBrowser(this.platformId)) {
 
-    if (isPlatformBrowser(this.platformId)) {
+    const introJs = (await import('intro.js')).default;
 
-      const introJs = (await import('intro.js')).default;
+    introJs().setOptions({
 
-      introJs().setOptions({
-        nextLabel: 'Next →',
-        prevLabel: '← Back',
-        doneLabel: 'Finish',
-        showProgress: true,
+      nextLabel: 'Next →',
+      prevLabel: '← Back',
+      doneLabel: 'Finish',
+      showProgress: true,
+      scrollToElement: true,
 
-        steps: [
-          {
-            intro: "👋 Welcome to Satendra's Portfolio"
-          },
-          {
-            element: '#home',
-            title: 'Overview',
-            intro: 'This is the homepage where you can see my skills and highlights.'
-          },
-          {
-            element: '#projects',
-            title: 'Projects',
-            intro: 'Explore real-world fintech and full-stack projects here.'
-          },
-          {
-            element: '#skills',
-            title: 'Tech Stack',
-            intro: 'Technologies I work with including Angular, Spring Boot & more.'
-          },
-          {
-            element: '#contact',
-            title: 'Contact',
-            intro: 'Get in touch with me for opportunities or collaboration.'
-          }
-        ]
-      }).start();
+      steps: [
 
-    }
+        {
+          intro: "👋 Welcome to my portfolio! Let me guide you quickly."
+        },
+
+        {
+          element: '#nav-overview',
+          title: 'Overview',
+          intro: 'This is the homepage where you can see my highlights and summary.'
+        },
+
+        {
+          element: '#nav-projects',
+          title: 'Projects',
+          intro: 'Here you can explore my real-world projects with full details.'
+        },
+
+        {
+          element: '#nav-skills',
+          title: 'Skills',
+          intro: 'Technologies and tools I work with as a full-stack developer.'
+        },
+
+        {
+          element: '#nav-experience',
+          title: 'Experience',
+          intro: 'My professional journey and companies I have worked with.'
+        },
+
+        {
+          element: '#nav-packages',
+          title: 'Packages',
+          intro: 'Custom Angular tools and libraries I have built.'
+        },
+
+        {
+          element: '#nav-about',
+          title: 'About Me',
+          intro: 'Know more about my background and expertise.'
+        },
+
+        {
+          element: '#nav-contact',
+          title: 'Contact',
+          intro: 'Get in touch with me for opportunities or collaboration.'
+        }
+
+      ]
+
+    }).start();
 
   }
+
+}
 }
