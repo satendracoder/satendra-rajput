@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  DragDropModule,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,56 +24,66 @@ interface RepositoryModel {
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [CommonModule, DragDropModule, MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [
+    CommonModule,
+    DragDropModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+  ],
   templateUrl: './overview.component.html',
-  styleUrl: './overview.component.scss'
+  styleUrl: './overview.component.scss',
 })
 export class OverviewComponent {
   editMode = false; // customize toggle
   websiteUrl = 'https://satendracoder.com';
 
-
   repositories: RepositoryModel[] = [
     {
       title: 'ADCB Loan Origination System',
       visibility: 'Private',
-      description: 'Built configurable multi-step loan journeys in Angular integrated with Java Spring Boot APIs for end-to-end loan onboarding.',
+      description:
+        'Built configurable multi-step loan journeys in Angular integrated with Java Spring Boot APIs for end-to-end loan onboarding.',
       platform: 'Angular, Angular Material, Jira, Git, GitHub, Scrum',
       stars: 120,
       forks: 35,
-      image: 'https://me.satendracoder.com/assets/images/projects/redmil_fintech/login.png',
-      color: '#dd0031'
+      image: '/assets/image/adcb/dashboard.jpg',
+      color: '#dd0031',
     },
     {
       title: 'Axis Bank Dealer LOS',
       visibility: 'Private',
-      description: 'Developed dealer-focused loan origination flows, dashboards, and application tracking modules in Angular with backend integration.',
+      description:
+        'Developed dealer-focused loan origination flows, dashboards, and application tracking modules in Angular with backend integration',
       platform: 'Angular, Angular Material, Jira, Spring Boot, MySQL',
       stars: 95,
       forks: 22,
-      image: 'assets/projects/recharge.png',
-      color: '#dd0031'
+      image: '/assets/image/axis/1.jpg',
+      color: '#dd0031',
     },
     {
       title: 'Redmil FinTech Platform',
       visibility: 'Private',
-      description: 'Developed a full-featured fintech web application supporting AEPS, Recharge, Bill Payments, Wallet Transactions, and Micro ATM services..',
+      description:
+        'Developed a full-featured fintech web application supporting AEPS, Recharge, Bill Payments, Wallet Transactions, and Micro ATM services..',
       platform: ' Angular, Angular Material, REST APIs, JWT, RxJS',
       stars: 70,
       forks: 18,
-      image: 'assets/projects/portfolio.png',
-      color: '#dd0031'
+      image: '/assets/image/redmil_fintech/login.png',
+      color: '#dd0031',
     },
     {
       title: 'HDFC Loan CRM',
       visibility: 'Private',
-      description: 'Built an Angular-based CRM for customer on-boarding, loan application workflows, and approval process with secure API integration.',
-      platform: 'Angular, Angular Material, REST APIs, JWT, RxJS, GitHub, Postman',
+      description:
+        'Built an Angular-based CRM for customer on-boarding, loan application workflows, and approval process with secure API integration.',
+      platform:
+        'Angular, Angular Material, REST APIs, JWT, RxJS, GitHub, Postman',
       stars: 150,
       forks: 40,
-      image: 'assets/projects/ui-library.png',
-      color: '#dd0031'
-    }
+      image: '/assets/image/redmil_hdfc/masterBranchData.png',
+      color: '#dd0031',
+    },
   ];
 
   deferredPrompt: any;
@@ -91,9 +105,7 @@ export class OverviewComponent {
     }
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   drop(event: CdkDragDrop<RepositoryModel[]>) {
     moveItemInArray(this.repositories, event.previousIndex, event.currentIndex);
 
@@ -112,7 +124,7 @@ export class OverviewComponent {
   }
 
   installPWA() {
-    debugger
+    debugger;
     if (!this.deferredPrompt) return;
     this.deferredPrompt.prompt();
     this.deferredPrompt.userChoice.then((choiceResult: any) => {
