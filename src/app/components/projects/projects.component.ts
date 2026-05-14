@@ -14,11 +14,11 @@ export class ProjectsComponent {
 
 projects = [
   {
-    name: 'Satendracoder Developer Suite',
-    client: 'Personal Brand',
-    company: 'Self',
-    shortDesc: 'A full-stack platform built under the personal brand "Satendra Coder" featuring developer resources, blogging, and learning modules.',
-    fullDesc: 'A full-stack platform under "Satendra Coder" featuring developer resources, blogs, and learning modules.',
+    name: 'Kudo Engineer',
+    client: 'E-Learning Platform',
+    company: 'Own / Self',
+    shortDesc: 'KudoEngineer is a modern developer learning platform focused on software engineering, interview preparation, and full stack development!',
+    fullDesc: 'KudoEngineer is a modern developer learning platform focused on software engineering, interview preparation, and full stack development!',
     tech: ['Angular', 'Spring Boot', 'JWT', 'MySQL', 'Docker','GitHub','Postman'],
     features: [
       'Developer resources platform',
@@ -30,7 +30,7 @@ projects = [
   {
     name: 'ADCB Loan Origination System',
     client: 'ADCB Bank',
-    company: 'Organization Project',
+    company: 'Vastika Technologies',
     shortDesc: 'Built configurable multi-step loan journeys in Angular integrated with Java Spring Boot APIs for end-to-end loan onboarding.',
     fullDesc: 'Built configurable multi-step loan journeys integrated with backend APIs for complete loan onboarding.',
     tech: ['Angular', 'Angular Material', 'Jira', 'Scrum','GitHub','Postman'],
@@ -44,7 +44,7 @@ projects = [
   {
     name: 'Axis Bank Dealer LOS',
     client: 'Axis Bank',
-    company: 'Organization Project',
+    company: 'Vastika Technologies',
     shortDesc: 'Developed dealer-focused loan origination flows, dashboards, and application tracking modules in Angular with backend integration.',
     fullDesc: 'Developed dealer-focused loan origination flows, dashboards, and tracking modules.',
     tech: ['Angular', 'Angular Material', 'Jira', 'Spring Boot', 'MySQL','GitHub','Postman'],

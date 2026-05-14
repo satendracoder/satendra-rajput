@@ -13,7 +13,7 @@ export class SkillsComponent {
     {
       category: 'Frontend',
       items: [
-        'Angular 14–18', 'RxJS', 'TypeScript', 'JavaScript',
+        'Angular 14–20', 'RxJS','Signals', 'NgRx', 'TypeScript', 'JavaScript',
         'HTML5', 'CSS3', 'SCSS', 'Angular Material',
         'Bootstrap', 'Tailwind'
       ]
@@ -21,12 +21,12 @@ export class SkillsComponent {
     {
       category: 'Backend',
       items: [
-        'Java', 'Spring Boot', 'REST APIs', 'JWT Authentication'
+        'Java', 'Spring Boot', 'REST APIs', 'JWT Authentication','Security', 'Microservices'
       ]
     },
     {
       category: 'Database',
-      items: ['MySQL']
+      items: ['MySQL','Redis']
     },
     {
       category: 'DevOps / CI-CD',

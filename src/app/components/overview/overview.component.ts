@@ -36,7 +36,7 @@ interface RepositoryModel {
 })
 export class OverviewComponent {
   editMode = false; // customize toggle
-  websiteUrl = 'https://satendracoder.com';
+  websiteUrl = 'https://kudoengineer.com';
 
   repositories: RepositoryModel[] = [
     {
@@ -96,7 +96,7 @@ export class OverviewComponent {
       }
 
       window.addEventListener('beforeinstallprompt', (event: any) => {
-        if (window.location.hostname === 'satendracoder.com') {
+        if (window.location.hostname === 'kudoengineer.com') {
           event.preventDefault();
           this.deferredPrompt = event;
           console.log('Portfolio PWA install ready');
