@@ -130,3 +130,30 @@
   }
 
 }
+
+.contact-action {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.contact-btn {
+  width: 100%;
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--link-color);
+  color: var(--white);
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  &:hover {
+    background: var(--link-hover);
+    transform: translateY(-2px);
+  }
+}

@@ -28,6 +28,19 @@ projects = [
     ]
   },
   {
+    name: 'Axis Bank Dealer LOS',
+    client: 'Axis Bank',
+    company: 'Vastika Technologies',
+    shortDesc: 'Developed dealer-focused loan origination flows, dashboards, and application tracking modules in Angular with backend integration.',
+    fullDesc: 'Developed dealer-focused loan origination flows, dashboards, and tracking modules.',
+    tech: ['Angular', 'Angular Material', 'Jira', 'Spring Boot', 'MySQL','GitHub','Postman'],
+    features: [
+      'Dealer dashboards',
+      'Loan tracking',
+      'Backend integration'
+    ]
+  },
+    {
     name: 'ADCB Loan Origination System',
     client: 'ADCB Bank',
     company: 'Vastika Technologies',
@@ -39,19 +52,6 @@ projects = [
       'API integration',
       'Configurable workflows',
       'End-to-end onboarding'
-    ]
-  },
-  {
-    name: 'Axis Bank Dealer LOS',
-    client: 'Axis Bank',
-    company: 'Vastika Technologies',
-    shortDesc: 'Developed dealer-focused loan origination flows, dashboards, and application tracking modules in Angular with backend integration.',
-    fullDesc: 'Developed dealer-focused loan origination flows, dashboards, and tracking modules.',
-    tech: ['Angular', 'Angular Material', 'Jira', 'Spring Boot', 'MySQL','GitHub','Postman'],
-    features: [
-      'Dealer dashboards',
-      'Loan tracking',
-      'Backend integration'
     ]
   },
   {

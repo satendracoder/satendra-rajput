@@ -1,0 +1,162 @@
+<div class="contact-dialog">
+
+  <div class="dialog-header">
+    <h2>Let's Connect</h2>
+
+    <button
+      mat-icon-button
+      (click)="close()">
+      ✕
+    </button>
+  </div>
+
+  <p class="subtitle">
+    Recruiter, Freelance Client, or Business Inquiry
+  </p>
+
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="submitForm()">
+
+    <div class="grid">
+
+      <!-- Inquiry Type -->
+      <mat-form-field appearance="outline">
+        <mat-label>I am a</mat-label>
+
+        <mat-select formControlName="inquiryType">
+          <mat-option
+            *ngFor="let type of inquiryTypes"
+            [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+
+        <mat-error>
+          Inquiry type is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Full Name -->
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+
+        <input
+          matInput
+          formControlName="fullName">
+
+        <mat-error *ngIf="f['fullName'].hasError('required')">
+          Name is required
+        </mat-error>
+
+        <mat-error *ngIf="f['fullName'].hasError('minlength')">
+          Minimum 3 characters required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Company -->
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+
+        <input
+          matInput
+          formControlName="company">
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+
+        <input
+          matInput
+          type="email"
+          formControlName="email">
+
+        <mat-error *ngIf="f['email'].hasError('required')">
+          Email is required
+        </mat-error>
+
+        <mat-error *ngIf="f['email'].hasError('email')">
+          Invalid email
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Phone -->
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+
+        <input
+          matInput
+          formControlName="phone">
+
+        <mat-error>
+          Enter valid 10 digit number
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Position -->
+      <mat-form-field appearance="outline">
+        <mat-label>Position / Project Type</mat-label>
+
+        <input
+          matInput
+          formControlName="position">
+
+        <mat-error>
+          This field is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Budget -->
+      <mat-form-field appearance="outline">
+        <mat-label>Budget / CTC</mat-label>
+
+        <input
+          matInput
+          formControlName="budget">
+      </mat-form-field>
+
+    </div>
+
+    <!-- Message -->
+    <mat-form-field
+      appearance="outline"
+      class="full-width">
+
+      <mat-label>Message</mat-label>
+
+      <textarea
+        matInput
+        rows="6"
+        formControlName="message">
+      </textarea>
+
+      <mat-error>
+        Minimum 20 characters required
+      </mat-error>
+
+    </mat-form-field>
+
+    <div class="actions">
+
+      <button
+        type="button"
+        mat-stroked-button
+        (click)="close()">
+        Cancel
+      </button>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary">
+
+        {{ loading ? 'Sending...' : 'Send Message' }}
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
