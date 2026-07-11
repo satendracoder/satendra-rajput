@@ -22,17 +22,16 @@ interface RepositoryModel {
 }
 
 @Component({
-  selector: 'app-overview',
-  standalone: true,
-  imports: [
-    CommonModule,
-    DragDropModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-  ],
-  templateUrl: './overview.component.html',
-  styleUrl: './overview.component.scss',
+    selector: 'app-overview',
+    imports: [
+        CommonModule,
+        DragDropModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
+    ],
+    templateUrl: './overview.component.html',
+    styleUrl: './overview.component.scss'
 })
 export class OverviewComponent {
   editMode = false; // customize toggle

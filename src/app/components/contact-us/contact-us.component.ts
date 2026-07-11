@@ -6,11 +6,10 @@ import { ContactService } from '../../service/contact/contact.service';
 import { ToastService, ScAngularToastify } from 'sc-angular-toastify';
 
 @Component({
-  selector: 'app-contact-us',
-  standalone: true,
-  imports: [A11yModule],
-  templateUrl: './contact-us.component.html',
-  styleUrl: './contact-us.component.scss',
+    selector: 'app-contact-us',
+    imports: [A11yModule],
+    templateUrl: './contact-us.component.html',
+    styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent {
   constructor(

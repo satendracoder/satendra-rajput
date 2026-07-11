@@ -6,11 +6,10 @@ import { ContactDialogComponent } from '../../shared/components/contact-dialog/c
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-about-us',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.scss',
+    selector: 'app-about-us',
+    imports: [RouterLink],
+    templateUrl: './about-us.component.html',
+    styleUrl: './about-us.component.scss'
 })
 export class AboutUsComponent {
   resumeUrl = '/assets/resume/Resume.pdf';

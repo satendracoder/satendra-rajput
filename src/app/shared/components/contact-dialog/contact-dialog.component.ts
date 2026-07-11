@@ -10,16 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-contact-dialog',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatIconModule],
-  templateUrl: './contact-dialog.component.html',
-  styleUrl: './contact-dialog.component.scss'
+    selector: 'app-contact-dialog',
+    imports: [CommonModule, ReactiveFormsModule, MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatIconModule],
+    templateUrl: './contact-dialog.component.html',
+    styleUrl: './contact-dialog.component.scss'
 })
 export class ContactDialogComponent {
  contactForm: FormGroup;

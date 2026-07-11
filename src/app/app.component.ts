@@ -17,25 +17,24 @@ import { ContactService } from './service/contact/contact.service';
 import { ContactDialogComponent } from './shared/components/contact-dialog/contact-dialog.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    CommonModule,
-    ProfileComponent,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatBadgeModule,
-    MatSlideToggleModule,
-    FormsModule,
-    RouterLink,
-    RouterLinkActive,
-    OnboardingComponent,
-    ScAngularToastify,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        CommonModule,
+        ProfileComponent,
+        MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
+        MatBadgeModule,
+        MatSlideToggleModule,
+        FormsModule,
+        RouterLink,
+        RouterLinkActive,
+        OnboardingComponent,
+        ScAngularToastify,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   checked = false;

@@ -3,11 +3,10 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { LottieComponent } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-onboarding',
-  standalone: true,
-  imports: [CommonModule, LottieComponent],
-  templateUrl: './onboarding.component.html',
-  styleUrl: './onboarding.component.scss'
+    selector: 'app-onboarding',
+    imports: [CommonModule, LottieComponent],
+    templateUrl: './onboarding.component.html',
+    styleUrl: './onboarding.component.scss'
 })
 export class OnboardingComponent {
   showPopup = false;
