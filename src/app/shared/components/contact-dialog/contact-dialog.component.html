@@ -25,11 +25,12 @@
         <mat-label>I am a</mat-label>
 
         <mat-select formControlName="inquiryType">
-          <mat-option
-            *ngFor="let type of inquiryTypes"
-            [value]="type">
-            {{ type }}
-          </mat-option>
+          @for (type of inquiryTypes; track type) {
+            <mat-option
+              [value]="type">
+              {{ type }}
+            </mat-option>
+          }
         </mat-select>
 
         <mat-error>
@@ -45,118 +46,126 @@
           matInput
           formControlName="fullName">
 
-        <mat-error *ngIf="f['fullName'].hasError('required')">
-          Name is required
-        </mat-error>
+          @if (f['fullName'].hasError('required')) {
+            <mat-error>
+              Name is required
+            </mat-error>
+          }
 
-        <mat-error *ngIf="f['fullName'].hasError('minlength')">
-          Minimum 3 characters required
-        </mat-error>
-      </mat-form-field>
+          @if (f['fullName'].hasError('minlength')) {
+            <mat-error>
+              Minimum 3 characters required
+            </mat-error>
+          }
+        </mat-form-field>
 
-      <!-- Company -->
-      <mat-form-field appearance="outline">
-        <mat-label>Company</mat-label>
+        <!-- Company -->
+        <mat-form-field appearance="outline">
+          <mat-label>Company</mat-label>
 
-        <input
-          matInput
-          formControlName="company">
-      </mat-form-field>
+          <input
+            matInput
+            formControlName="company">
+          </mat-form-field>
 
-      <!-- Email -->
-      <mat-form-field appearance="outline">
-        <mat-label>Email Address</mat-label>
+          <!-- Email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
 
-        <input
-          matInput
-          type="email"
-          formControlName="email">
+            <input
+              matInput
+              type="email"
+              formControlName="email">
 
-        <mat-error *ngIf="f['email'].hasError('required')">
-          Email is required
-        </mat-error>
+              @if (f['email'].hasError('required')) {
+                <mat-error>
+                  Email is required
+                </mat-error>
+              }
 
-        <mat-error *ngIf="f['email'].hasError('email')">
-          Invalid email
-        </mat-error>
-      </mat-form-field>
+              @if (f['email'].hasError('email')) {
+                <mat-error>
+                  Invalid email
+                </mat-error>
+              }
+            </mat-form-field>
 
-      <!-- Phone -->
-      <mat-form-field appearance="outline">
-        <mat-label>Phone Number</mat-label>
+            <!-- Phone -->
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
 
-        <input
-          matInput
-          formControlName="phone">
+              <input
+                matInput
+                formControlName="phone">
 
-        <mat-error>
-          Enter valid 10 digit number
-        </mat-error>
-      </mat-form-field>
+                <mat-error>
+                  Enter valid 10 digit number
+                </mat-error>
+              </mat-form-field>
 
-      <!-- Position -->
-      <mat-form-field appearance="outline">
-        <mat-label>Position / Project Type</mat-label>
+              <!-- Position -->
+              <mat-form-field appearance="outline">
+                <mat-label>Position / Project Type</mat-label>
 
-        <input
-          matInput
-          formControlName="position">
+                <input
+                  matInput
+                  formControlName="position">
 
-        <mat-error>
-          This field is required
-        </mat-error>
-      </mat-form-field>
+                  <mat-error>
+                    This field is required
+                  </mat-error>
+                </mat-form-field>
 
-      <!-- Budget -->
-      <mat-form-field appearance="outline">
-        <mat-label>Budget / CTC</mat-label>
+                <!-- Budget -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Budget / CTC</mat-label>
 
-        <input
-          matInput
-          formControlName="budget">
-      </mat-form-field>
+                  <input
+                    matInput
+                    formControlName="budget">
+                  </mat-form-field>
 
-    </div>
+                </div>
 
-    <!-- Message -->
-    <mat-form-field
-      appearance="outline"
-      class="full-width">
+                <!-- Message -->
+                <mat-form-field
+                  appearance="outline"
+                  class="full-width">
 
-      <mat-label>Message</mat-label>
+                  <mat-label>Message</mat-label>
 
-      <textarea
-        matInput
-        rows="6"
-        formControlName="message">
-      </textarea>
+                  <textarea
+                    matInput
+                    rows="6"
+                    formControlName="message">
+                  </textarea>
 
-      <mat-error>
-        Minimum 20 characters required
-      </mat-error>
+                  <mat-error>
+                    Minimum 20 characters required
+                  </mat-error>
 
-    </mat-form-field>
+                </mat-form-field>
 
-    <div class="actions">
+                <div class="actions">
 
-      <button
-        type="button"
-        mat-stroked-button
-        (click)="close()">
-        Cancel
-      </button>
+                  <button
+                    type="button"
+                    mat-stroked-button
+                    (click)="close()">
+                    Cancel
+                  </button>
 
-      <button
-        type="submit"
-        mat-raised-button
-        color="primary">
+                  <button
+                    type="submit"
+                    mat-raised-button
+                    color="primary">
 
-        {{ loading ? 'Sending...' : 'Send Message' }}
+                    {{ loading ? 'Sending...' : 'Send Message' }}
 
-      </button>
+                  </button>
 
-    </div>
+                </div>
 
-  </form>
+              </form>
 
-</div>
+            </div>

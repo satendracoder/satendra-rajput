@@ -1,10 +1,10 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { LottieComponent } from 'ngx-lottie';
 
 @Component({
     selector: 'app-onboarding',
-    imports: [CommonModule, LottieComponent],
+    imports: [LottieComponent],
     templateUrl: './onboarding.component.html',
     styleUrl: './onboarding.component.scss'
 })

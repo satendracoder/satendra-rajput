@@ -1,22 +1,22 @@
 <!-- <div class="hero-container">
-  <div class="badge">Software Engineer & Content Creator</div>
+<div class="badge">Software Engineer & Content Creator</div>
 
-  <h1>
-    Hi, I'm <span class="highlight">Satendra Rajput</span>
-    <span class="wave">👋</span>
-  </h1> -->
+<h1>
+  Hi, I'm <span class="highlight">Satendra Rajput</span>
+  <span class="wave">👋</span>
+</h1> -->
 
-  <!-- <p class="description">
-    Founder of <a href="#" class="link">GrowthCompiler.com</a>, helping engineers ace tech interviews.
-    Creator of the <a href="#" class="link">GrowthCompiler Newsletter</a> with 
-    <span class="reader-badge">70,000+ readers</span>
-  </p> -->
-  <!-- <p class="description">
-    Passionate about building scalable frontend apps, clean backend logic, and
-    reusable components. Currently working in<span class="reader-badge">SaaS & Fintech domains</span>— crafting
-    performance-driven solutions with <a href="#" class="link">Angular</a> & <a href="#" class="link">Java.</a>
-  </p> <br>
-  <br>
+<!-- <p class="description">
+Founder of <a href="#" class="link">GrowthCompiler.com</a>, helping engineers ace tech interviews.
+Creator of the <a href="#" class="link">GrowthCompiler Newsletter</a> with
+<span class="reader-badge">70,000+ readers</span>
+</p> -->
+<!-- <p class="description">
+Passionate about building scalable frontend apps, clean backend logic, and
+reusable components. Currently working in<span class="reader-badge">SaaS & Fintech domains</span>— crafting
+performance-driven solutions with <a href="#" class="link">Angular</a> & <a href="#" class="link">Java.</a>
+</p> <br>
+<br>
   <a href="https://satendracoder.com/" target="_blank">
     <button class="explore-btn">Explore at Satendra Coder →</button>
   </a>
@@ -33,39 +33,40 @@
 </div>
 
 <div class="pinned-grid" cdkDropList [cdkDropListDisabled]="!editMode" (cdkDropListDropped)="drop($event)">
-  <div *ngFor="let repo of repositories" class="repo-card" cdkDrag [ngClass]="{'drag-mode': editMode}">
-    <div class="repo-content">
-      <div class="repo-header">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-          <path
-            d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z">
-          </path>
-        </svg>
-        <a href="#" class="repo-title">{{ repo.title }}</a>
-        <button class="more-btn" matIconButton [matMenuTriggerFor]="menu">
+  @for (repo of repositories; track repo) {
+    <div class="repo-card" cdkDrag [ngClass]="{'drag-mode': editMode}">
+      <div class="repo-content">
+        <div class="repo-header">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
             <path
-              d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+              d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z">
             </path>
           </svg>
-        </button>
-        <mat-menu #menu="matMenu" style="z-index: 9 !important;">
-          <button mat-menu-item (click)="openWebsite()">
-            <span>Website Link</span>
+          <a href="#" class="repo-title">{{ repo.title }}</a>
+          <button class="more-btn" matIconButton [matMenuTriggerFor]="menu">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path
+                d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+              </path>
+            </svg>
           </button>
-          <button mat-menu-item>
-            <span>Details of Project</span>
-          </button>
-        </mat-menu>
-      </div>
-      <!-- <span class="visibility-badge">{{ repo.visibility }}</span> -->
-      <p class="repo-description">{{ repo.description }}</p>
-      <div class="repo-meta">
-        <span class="meta-item">
-          <span class="color-dot" [style.background-color]="repo.color"></span>
-          {{ repo.platform }}
-        </span>
-        <!-- <span class="meta-item">
+          <mat-menu #menu="matMenu" style="z-index: 9 !important;">
+            <button mat-menu-item (click)="openWebsite()">
+              <span>Website Link</span>
+            </button>
+            <button mat-menu-item>
+              <span>Details of Project</span>
+            </button>
+          </mat-menu>
+        </div>
+        <!-- <span class="visibility-badge">{{ repo.visibility }}</span> -->
+        <p class="repo-description">{{ repo.description }}</p>
+        <div class="repo-meta">
+          <span class="meta-item">
+            <span class="color-dot" [style.background-color]="repo.color"></span>
+            {{ repo.platform }}
+          </span>
+          <!-- <span class="meta-item">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
             <path
               d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z">
@@ -87,6 +88,7 @@
       <img [src]="repo.image" alt="project preview">
     </div>
   </div>
+}
 </div>
 
 <!-- this Youtube  -->
@@ -117,11 +119,11 @@
 
     <div class="profile-card">
       <div class="card-left">
-          <a href="https://www.youtube.com/@kudoengineer" target="_blank" class="link-btn">
+        <a href="https://www.youtube.com/@kudoengineer" target="_blank" class="link-btn">
           <i class="fa-brands fa-youtube"></i>
           <h4>Kudo Engineer</h4>
         </a>
-       
+
         <p>KudoEngineer is a modern developer learning platform focused on software engineering, interview preparation, and full stack development!</p>
 
         <div class="meta">
@@ -160,38 +162,38 @@
                         2h1v-4h2v4h6v-4h2v4h1a2 2 0 002-2v-3c0-2.32-1.02-4.4-2.6-5.52zM9 
                         13.25a.75.75 0 110-1.5.75.75 0 010 1.5zm6 
                         0a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-            </svg>
-            <span>Install as App (PWA)</span>
-          </button>
+              </svg>
+              <span>Install as App (PWA)</span>
+            </button>
+          </div>
         </div>
+
+        <img src="https://www.kudoengineer.com/icons/favicon.svg" class="platform-logo">
       </div>
 
-      <img src="https://www.kudoengineer.com/icons/favicon.svg" class="platform-logo">
-    </div>
+      <div class="platform-card">
+        <div class="platform-left">
+          <h4>Serotask</h4>
+          <p>Master new skills with expert-led courses and mentorship</p>
 
-    <div class="platform-card">
-      <div class="platform-left">
-        <h4>Serotask</h4>
-        <p>Master new skills with expert-led courses and mentorship</p>
-
-        <div class="app-buttons">
-          <button (click)="openWebsite('serotask')">🌐 Website</button>
-          <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
+          <div class="app-buttons">
+            <button (click)="openWebsite('serotask')">🌐 Website</button>
+            <button class="btn-app"> <svg fill="#fff" viewBox="0 0 24 24" width="20" height="20">
               <path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.05 
                         10.05 0 0012 7.75c-1.6 0-3.1.37-4.43 1.03L5.7 5.8a.5.5 
                         0 10-.87.5l1.84 3.18A8.03 8.03 0 004 15v3a2 2 0 002 
                         2h1v-4h2v4h6v-4h2v4h1a2 2 0 002-2v-3c0-2.32-1.02-4.4-2.6-5.52zM9 
                         13.25a.75.75 0 110-1.5.75.75 0 010 1.5zm6 
                         0a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-            </svg>
-            <!-- <span>Android App</span> -->
-          </button>
+              </svg>
+              <!-- <span>Android App</span> -->
+            </button>
+          </div>
         </div>
+
+        <img src="https://serotask.vercel.app/assets/images/global/favicon.svg" class="platform-logo">
       </div>
 
-      <img src="https://serotask.vercel.app/assets/images/global/favicon.svg" class="platform-logo">
     </div>
 
   </div>
-
-</div>

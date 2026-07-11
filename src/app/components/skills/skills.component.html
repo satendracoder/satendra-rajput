@@ -4,37 +4,33 @@
 
   <div class="skills-grid">
 
-    <div class="skill-card" *ngFor="let skill of skills">
-
-      <div class="card-inner">
-
-        <!-- Front -->
-        <div class="card-front">
-          <h3>{{skill.category}}</h3>
-
-          <p>
-            {{skill.items.length}} Technologies
-          </p>
-
-          <button class="btn primary">
-            Explore
-          </button>
-        </div>
-
-        <!-- Back -->
-        <div class="card-back">
-          <h3>{{skill.category}}</h3>
-
-          <div class="skills-list">
-            <span *ngFor="let item of skill.items">
-              {{item}}
-            </span>
+    @for (skill of skills; track skill) {
+      <div class="skill-card">
+        <div class="card-inner">
+          <!-- Front -->
+          <div class="card-front">
+            <h3>{{skill.category}}</h3>
+            <p>
+              {{skill.items.length}} Technologies
+            </p>
+            <button class="btn primary">
+              Explore
+            </button>
+          </div>
+          <!-- Back -->
+          <div class="card-back">
+            <h3>{{skill.category}}</h3>
+            <div class="skills-list">
+              @for (item of skill.items; track item) {
+                <span>
+                  {{item}}
+                </span>
+              }
+            </div>
           </div>
         </div>
-
       </div>
-
-    </div>
+    }
 
   </div>
 

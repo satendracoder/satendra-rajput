@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -19,20 +19,19 @@ import { ContactDialogComponent } from './shared/components/contact-dialog/conta
 @Component({
     selector: 'app-root',
     imports: [
-        RouterOutlet,
-        CommonModule,
-        ProfileComponent,
-        MatButtonModule,
-        MatMenuModule,
-        MatIconModule,
-        MatBadgeModule,
-        MatSlideToggleModule,
-        FormsModule,
-        RouterLink,
-        RouterLinkActive,
-        OnboardingComponent,
-        ScAngularToastify,
-    ],
+    RouterOutlet,
+    ProfileComponent,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatSlideToggleModule,
+    FormsModule,
+    RouterLink,
+    RouterLinkActive,
+    OnboardingComponent,
+    ScAngularToastify
+],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
